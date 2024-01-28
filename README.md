@@ -1,5 +1,5 @@
 * ProyectoFinal_Astrada_Juan_PAblo
-> Comisión: 70195 Coder House - Python
+> Comisión: 50195 Coder House - Python
 > Alumno: Astrada Juan Pablo
 
 ** Nombre del Proyecto
