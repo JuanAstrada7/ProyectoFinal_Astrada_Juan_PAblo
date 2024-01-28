@@ -32,3 +32,9 @@ Aclaración: La opción de editar y eliminar en las seccionessolo le está permi
 > Back-End
 - Python 3.9
 - Django 4.2
+
+## Pruebas Realizadas
+
+Ver archivo titulado "Pruebas Proyecto Final Python" el cual se encuentra en el siguiente repositorio: 
+
+## Video Demostración
