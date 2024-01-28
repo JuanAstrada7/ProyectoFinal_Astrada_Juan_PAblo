@@ -35,6 +35,6 @@ Aclaración: La opción de editar y eliminar en las seccionessolo le está permi
 
 ## Pruebas Realizadas
 
-Ver archivo titulado "Pruebas Proyecto Final Python" el cual se encuentra en el siguiente repositorio: 
+Ver archivo titulado "Pruebas Proyecto Final Python" el cual se encuentra en el siguiente repositorio: https://github.com/JuanAstrada7/ProyectoFinal_Astrada_Juan_PAblo/tree/main
 
 ## Video Demostración
