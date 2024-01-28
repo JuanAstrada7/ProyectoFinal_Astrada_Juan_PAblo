@@ -3,6 +3,7 @@
 > Alumno: Astrada Juan Pablo
 
 ** Nombre del Proyecto
+
 Web sobre Forumla 1
 
 > Versión 1.0
