@@ -1,0 +1,51 @@
+{% extends "F1app/padre.html" %}
+
+{% block titulo %} 
+
+<h1>Grandes Premios</h1>
+
+<style>
+    table {
+        margin: auto;
+    }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Pais</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% regroup circuitos|dictsortreversed:"pais" by pais as circuitos_grouped %}
+        {% for group in circuitos_grouped %}
+            {% for circuito in group.list %}
+                <tr>
+                    <td>{{ circuito.nombre }}</td>
+                    <td>{{ circuito.pais }}</td>
+                    <td>
+                <a href="{% url 'circuito' circuito.id %}"><i class="bi bi-eye"></i></a>
+                {% if user.is_authenticated and user.is_staff %}
+                <a href="{% url 'Actualizar Circuito' circuito.id %}"><i class="bi bi-pencil-fill"></i></a>
+                <a href="{% url 'Eliminar Circuito' circuito.id %}"><i class="bi bi-trash text-danger"></i></a>
+                {% endif %}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody> 
+</table>
+
+    <br>
+
+    <li>
+        <a class="sb-forms-latest" href="{% url 'Buscar Circuitos' %}">  Buscar circutio por Km </a>
+    </li>
+
+    <a class="btn btn-primary" href="{% url 'Nuevo Circuito' %}">  Agrega nuevo Equipo </a>
+{% endblock %} 
+
+{% block content %}
+{% endblock %}

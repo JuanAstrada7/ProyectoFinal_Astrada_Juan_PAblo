@@ -1,0 +1,39 @@
+{% extends "F1app/padre.html" %}
+
+{% block titulo %} 
+<div class="container text-center">
+    <h1 style="font-size: 24px;">Iniciar Sesión</h1>
+</div>
+
+<div class="container text-center">
+    <div class="container">
+        <div class="text-center">
+            <form id="login-form" style="max-width: 400px; margin: 0 auto;" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_username" style="font-size: 16px;"><span class="text-white">Usuario</span></label>
+                    <input id="id_username" name="username" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="id_password" style="font-size: 16px;"><span class="text-white">Contraseña</span></label>
+                    <input id="id_password" name="password" type="password" class="form-control">
+                </div>
+                {% if form.errors %}
+                    <p class="label label-danger" style="font-size: 14px;">
+                        Tu usuario y contraseña no coinciden 
+                        Intenta nuevamente.
+                    </p>
+                {% endif %}
+
+                <input type="submit" value="Login" class="btn btn-primary btn-block" />
+                <input type="hidden" name="next" value="{{ next }}" />
+            </form>
+        </div>
+    </div>
+    <br>
+    <p style="font-size: 14px;">¿Aun no tienes cuenta? <a href="{% url 'registro' %}">Regístrate</a></p>
+</div>
+{% endblock %}
+
+{% block content %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "F1App/padre.html" %}
+
+{% block titulo %}
+
+<div class="container" style="font-size: 45px;">
+    <h1>Buscar Pilotos por pais:</h1>
+
+        <form action="/resultadosPilotos/" method="GET">
+            Ingresa el pais del pilotos: <input type="text" name="nacionalidad">
+            <input type="submit" value="Buscar">
+        </form>
+ </div>
+    {% if pilotos %}
+
+    {% for x in pilotos %}
+
+    <p>{{x.nombre}}</p>
+
+    {% endfor %}
+
+    {% endif %}
+
+{% endblock %} 
+
+{% block content %}
+
+
+
+{% endblock %}

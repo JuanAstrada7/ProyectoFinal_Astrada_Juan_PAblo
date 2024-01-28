@@ -1,0 +1,19 @@
+{% extends "F1app/padre.html" %}
+
+{% block titulo %}  
+
+<h1>Ingresar nuevos Equipos </h1>
+
+    <form action="/nuevoEquipo/" method="POST"> {% csrf_token %}
+
+        <p> Nombre: <input type="text" name="name"> </p>
+        <p> Año: <input type="number" name="year"> </p>
+        <p> Temporadas: <input type="number" name="seasons"> </p>
+
+        <input type="submit" value="Guardar">
+    </form>
+
+{% endblock %} 
+
+{% block content %}
+{% endblock %}

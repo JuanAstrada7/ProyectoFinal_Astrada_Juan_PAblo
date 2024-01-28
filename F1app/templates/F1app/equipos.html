@@ -1,0 +1,48 @@
+{% extends "F1app/padre.html" %}
+
+{% block titulo %} 
+
+<h1> Equipos Principales </h1>
+<style>
+    table {
+        margin: auto;
+    }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Campeonatos</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% regroup equipos|dictsortreversed:"campeonatos" by campeonatos as equipos_grouped %}
+        {% for group in equipos_grouped %}
+            {% for equipo in group.list %}
+                <tr>
+                    <td>{{ equipo.nombre }}</td>
+                    <td>{{ equipo.campeonatos }}</td>
+                    <td>
+                        <a href="{% url 'equipo' equipo.id %}"><i class="bi bi-eye"></i></a>
+                        {% if user.is_authenticated and user.is_staff %}
+                            <a href="{% url 'Actualizar Equipo' equipo.id %}"><i class="bi bi-pencil-fill"></i></a>
+                            <a href="{% url 'Eliminar Equipo' equipo.id %}"><i class="bi bi-trash text-danger"></i></a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </tbody> 
+</table>
+
+    <li>
+        <a class="sb-forms-latest" href="{% url 'Buscar Equipos' %}">  Buscar equipo por país </a>
+    </li>
+
+    <a class="btn btn-primary" href="{% url 'Nuevo Equipo' %}">  Agrega nuevo Equipo </a>
+{% endblock %} 
+
+{% block content %}
+{% endblock %}

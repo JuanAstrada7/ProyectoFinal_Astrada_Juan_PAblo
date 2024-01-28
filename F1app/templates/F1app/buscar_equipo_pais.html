@@ -1,0 +1,25 @@
+{% extends "F1App/padre.html" %}
+
+{% block titulo %}  
+<div class="container" style="font-size: 45px;">
+    <h1>Buscar Escuderias por pais:</h1>
+
+    <form action="/resultadosEquipos/" method="GET">
+        Ingresa el pais de la escuderia: <input type="text" name="nacionalidad">
+        <input type="submit" value="Buscar">
+    </form>
+</div>
+    {% if equipos %}
+
+    {% for x in equipos %}
+
+    <p>{{x.nombre}}</p>
+
+    {% endfor %}
+
+    {% endif %}
+
+{% endblock %} 
+
+{% block content %}
+{% endblock %}

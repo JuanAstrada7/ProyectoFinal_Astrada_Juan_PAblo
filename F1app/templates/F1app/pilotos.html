@@ -1,0 +1,45 @@
+{% extends "F1app/padre.html" %}
+
+{% block titulo %} 
+    <h1>Todos los Pilotos</h1>
+    <style>
+        table {
+            margin: auto;
+        }
+    </style>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Puntos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for piloto in pilotos|dictsortreversed:"puntos_totales" %}
+                <tr>
+                    <td>{{ piloto.nombre }}</td>
+                    <td>{{ piloto.puntos_totales }}</td>
+                    <td>
+                        <a href="{% url 'piloto' piloto.id %}"><i class="bi bi-eye"></i></a>
+                        {% if user.is_authenticated and user.is_staff %}
+                            <a href="{% url 'Actualizar Piloto' piloto.id %}"><i class="bi bi-pencil-fill"></i></a>
+                            <a href="{% url 'Eliminar Piloto' piloto.id %}"><i class="bi bi-trash text-danger"></i></a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <li>
+        <a class="sb-forms-latest" href="{% url 'Buscar Pilotos' %}">Buscar piloto por país</a>
+    </li>
+
+    <a class="btn btn-primary" href="{% url 'Nuevo Piloto' %}">Agrega nuevo Piloto</a>
+{% endblock %} 
+
+{% block content %}
+{% endblock %}
+

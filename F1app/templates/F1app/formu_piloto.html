@@ -1,0 +1,18 @@
+{% extends "F1app/padre.html" %}
+
+{% block titulo %}  
+
+
+<h1>Agregar nuevos Pilotos.</h1>
+
+    <form action="" method="POST"> {% csrf_token %}
+
+        {{mi_formu.as_p}}
+
+        <input type="submit" value="Guardar">
+    </form>
+
+{% endblock %} 
+
+{% block content %}
+{% endblock %}

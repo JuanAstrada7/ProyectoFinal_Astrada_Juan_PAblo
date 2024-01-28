@@ -1,0 +1,20 @@
+{% extends "F1app/padre.html" %}
+
+{% block titulo %}  
+
+<h1>Ingresar Nuevos Pilotos </h1>
+
+    <form action="/nuevoPiloto/" method="POST"> {% csrf_token %}
+
+        <p> Nombre: <input type="text" name="nombre"> </p>
+        <p> Nacionalidad: <input type="number" name="nacionalidad"> </p>
+        <p> Fecha de nacimiento: <input type="datetime" name="fecha_nacimiento"> </p>
+        <p> Puntos Totales: <input type="number" name="puntos_totales"> </p>
+
+        <input type="submit" value="Guardar">
+    </form>
+
+{% endblock %} 
+
+{% block content %}
+{% endblock %}

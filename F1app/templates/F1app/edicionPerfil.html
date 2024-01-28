@@ -1,0 +1,32 @@
+{% extends "F1App/padre.html" %}
+
+{% block titulo %} 
+
+<div class="container text-center" style="width: 43vw; margin-right: 10vw;">
+    <h2>Editar tus datos personales</h2>
+</div>
+
+<div class="container">
+
+<form class="container text-center"  id="login-form" style="width: 30vw; margin-right: 10vw;" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="small-text">
+        {{ form.as_p }}
+    </div>
+    <br>
+    <div class="container text-center">
+        <button type="submit" class="btn btn-primary text-center">Guardar</button>
+    </div>
+</form>
+</div>
+
+<style>
+    .small-text label {
+        font-size: 12px; /
+    }
+</style>
+
+{% endblock %}
+
+{% block content %}
+{% endblock %}

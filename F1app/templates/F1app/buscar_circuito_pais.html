@@ -1,0 +1,26 @@
+{% extends "F1App/padre.html" %}
+
+{% block titulo %}  
+
+<div class="container" style="font-size: 40px;">
+    <h1>Buscar Grandes Premios por KM:</h1>
+
+    <form action="/resultadosCircuitos/" method="GET">
+        Ingresa los Km del Gran Premio: <input type="text" name="longitud_km">
+        <input type="submit" value="Buscar">
+    </form>
+</div>
+    {% if circuitos %}
+
+    {% for x in circuitos %}
+
+    <p>{{x.nombre}}</p>
+
+    {% endfor %}
+
+    {% endif %}
+
+{% endblock %} 
+
+{% block content %}
+{% endblock %}
