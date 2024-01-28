@@ -4,7 +4,7 @@
 
 ** Nombre del Proyecto
 
-Web sobre Forumla 1
+Web sobre deporte motot Formula 1
 
 > Versión 1.0
 
